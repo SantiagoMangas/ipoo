@@ -42,4 +42,15 @@ public class NaveEspacial {
     public float obtenerAutonomia(){
         return combustible/parsec;
     }
+    public void copy (NaveEspacial n){
+        color = n.obtenerColor();
+        combustible = n.obtenerCombustible();
+    }
+    public boolean equals(NaveEspacial n){
+        return combustible == n.obtenerCombustible() && color == n.obtenerColor(); 
+        //si el combustible y el color son iguales, retorna true
+    }
+    public NaveEspacial clone(){
+        return new NaveEspacial(color, combustible); //crea un nuevo objeto con el mismo estado
+    }
 }
