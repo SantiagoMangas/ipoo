@@ -1,3 +1,4 @@
+package Tp1;
 public class Ejercicio_4 {
     //Analice si los siguientes segmentos de código son equivalentes considerando la compilación y la ejecución. Justifique su respuesta.   
     public static void main(String[] args) {
