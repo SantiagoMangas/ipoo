@@ -89,4 +89,14 @@ public class TempMinEstacion {
         }
         return iguales;
     }
+    public boolean dosSeguidos(float t){
+        //es recorrido no exahustivo porque no es necesario recorrer toda la coleccion
+        boolean hayDos = false;
+        for (int i = 0; i < cantDias()-1 && !hayDos; i++) {
+            if (tMin[i] > t && tMin[i+1] > t) {
+                hayDos = true;
+            }
+        }
+        return hayDos;
+    }
 }
