@@ -1,8 +1,10 @@
 {
   "java.project.sourcePaths": [
-    "Clase 4",
     "apuntes/agosto",
-    "apuntes"
+    "apuntes",
+    "Tp3/Ej3",
+    "Clase 4",
+    "Tp3/Ej6"
   ],
   "cSpell.words": [
     "Punto",

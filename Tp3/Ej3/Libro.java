@@ -36,5 +36,5 @@ public class Libro
     
     public char obtenerCategoria(){return categoria;}
     
-    public String toString(){return "nombre: "+ nombre+ "autor: "+autor+"editorial: "+editorial+"categoria: "+categoria;} 
+    public String toString(){return "nombre: "+ nombre+ " autor: "+autor+"editorial: "+editorial+"categoria: "+categoria;} 
 }
