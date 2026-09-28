@@ -35,7 +35,7 @@ public class TempMinEstacion {
                 hay = true;
         return hay;
     }
-    public int contarMayores(int t){
+    public int contarMayores(float t){
         //el recorrido es exahustivo cuando se visita cada elemento de la coleccion
         int cont = 0;
         for (int i = 0; i < cantDias(); i++) {
@@ -98,5 +98,50 @@ public class TempMinEstacion {
             }
         }
         return hayDos;
+    }
+    public boolean huboNConMayores(float t, int n){
+        int cont = 0;
+        if(n<=cantDias())
+            for(int i = 0; i < cantDias() && cont < n; i++){
+                if(tMin[i]>t)
+                    cont++;
+                else
+                    cont = 0;
+            }
+        return cont >= n;
+    }
+    public boolean huboAlMenosNMayores(float t, int n){
+        int cont = 0;
+        if( n <= cantDias()){
+            for(int i = 0; i < cantDias() && cont < n; i++){
+                if(tMin[i]>t){
+                    cont++;
+                }
+            }
+        }
+        return cont >= n;
+    }
+    public boolean huboExactamenteNMayores(float t, int n){
+        //es recorrido NO exhaustivo, si piden 3 y encuentra 4, CORTA, no necesita seguir recorriendo
+        int cont = 0;
+        if( n <= cantDias()){
+            for(int i = 0; i < cantDias() && cont <= n; i++){
+                if(tMin[i]>t){
+                    cont++;
+                }
+            }
+        }
+        return cont == n;
+    }
+    public boolean huboALoSumoNMayores(float t, int n){
+        int cont = 0;
+        if( n <= cantDias()){
+            for(int i = 0; i < cantDias() && cont <= n; i++){
+                if(tMin[i]>t){
+                    cont++;
+                }
+            }
+        }
+        return cont <= n;
     }
 }
