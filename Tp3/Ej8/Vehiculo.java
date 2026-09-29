@@ -43,7 +43,7 @@ class Vehiculo {
 
     public String obtenerPatente() {
         return patente;
-    }
+    }/*
     public int obteneraCobrar(Tarifa t){
         int aux;
         if(egreso == null || t == null){
@@ -71,7 +71,7 @@ class Vehiculo {
             patente == v.obtenerPatente();
 
     }
-    //hecho por ia:
+    hecho por ia:*/
     public int obteneraCobrar(Tarifa t) {
         // ¡Corte temprano! Si falta algún dato, devolvemos 0 directamente y no sigue bajando.
         if(egreso == null || t == null) {
@@ -88,12 +88,12 @@ class Vehiculo {
         } else if (minTranscurridos <= 60) {
             aux = t.obtenerT60();
         } else {
-            aux = t.obtenerTFija(); // ¡Corregido el nombre del método!
+            aux = t.obtenerTFija(); 
         }
         
         return aux;
     }
-
+ 
     public boolean anterior(Vehiculo v) {
         // Asume v ligado
         return this.ingreso.anterior(v.obtenerIngreso());
