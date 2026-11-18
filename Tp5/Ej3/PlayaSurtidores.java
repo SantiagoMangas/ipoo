@@ -2,7 +2,7 @@ public class PlayaSurtidores {
     private Surtidor[] Tabla;
 
     public PlayaSurtidores(int n) {
-        Tabla = new Surtidor(n);
+        Tabla = new Surtidor[n];
     }
 
     public PlayaSurtidores() {
@@ -109,6 +109,31 @@ public class PlayaSurtidores {
     }
 
     public PlayaSurtidores nLigados(int n){
-        
+        PlayaSurtidores aux = null;
+        boolean encontrado = false;
+        int contador = 0;
+        int indiceInicio = -1;
+
+        for(int i = 0; i < cantPosiciones() && !encontrado; i++){
+            if(Tabla[i] != null){
+                if(contador==0){
+                    indiceInicio = i;//guardamos dónde empezó esta racha
+                }
+                contador++;
+                if(contador ==n){
+                    encontrado = true;
+                }
+            } else {
+                contador = 0; //se corta la racha
+            }
+        }
+
+        if(encontrado){
+            aux = new PlayaSurtidores(n);
+            for(int i = 0; i <n;i++){
+                aux.establecerSurtidor(i,Tabla[indiceInicio + i]);
+            }
+        }
+        return aux;
     }
 }
